@@ -60,6 +60,9 @@ def t_WORD(token):
     r'[^\n<> ]+'
     return token
 
+def t_error(token):
+    print "HTML lexer : Illegal character " + token.value[0]
+    token.lexer.skip(1)
 
 
 webpage = "<!-- Hello --> ALL"
